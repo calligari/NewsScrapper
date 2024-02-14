@@ -1,4 +1,7 @@
 from newspaper import build, Article
+import nltk
+
+nltk.download("punkt")
 
 
 def get_articles(url: str):
@@ -12,6 +15,7 @@ def get_article_data(url: str):
     article.download()
     article.parse()
     # article.nlp()
+    #
     return {
         "title": article.title,
         "top_image": article.top_image,
